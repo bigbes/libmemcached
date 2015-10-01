@@ -2079,7 +2079,7 @@ int main(int argc, char **argv)
   struct test_type_st tests= { true, true };
   int total= 0;
   int failed= 0;
-  const char *hostname= NULL;
+  const char *hostname= "localhost";
   const char *port= MEMCACHED_DEFAULT_PORT_STRING;
   int cmd;
   bool prompt= false;
@@ -2148,7 +2148,7 @@ int main(int argc, char **argv)
     }
   }
 
-  if (hostname)
+  if (!hostname)
   {
     fprintf(stderr, "No hostname was provided.\n");
     return EXIT_FAILURE;
